@@ -1,0 +1,19 @@
+{
+    "name": "sahil-gulati/phphump",
+    "description": "A framework which has an ability to differentiate HTML and PHP.",
+    "authors": [
+        {
+            "name": "Sahil Gulati",
+            "email": "sahil@getamplify.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+	"php":">=5.4"
+    },
+    "autoload":{
+	"psr-0":{
+	    "PHPHump": "src/"
+	}
+    }
+}

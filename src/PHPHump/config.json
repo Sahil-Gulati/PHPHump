@@ -1,0 +1,15 @@
+{
+    "ignore":{
+        "tags":{
+            "starts_with": ["<!","<hr","<br","<input"]
+        }
+    },
+    "debug_errors":true,
+    "global_include":[
+        ""
+    ],
+    "error_variable":{
+        "prefix":":",
+        "postfix":":"
+    }
+}

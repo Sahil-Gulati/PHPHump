@@ -1,0 +1,82 @@
+# Hump While #
+This attribute allows us to iterate some html content no. of times.
+
+
+## Syntax ##
+```HTML
+hump-while="variableName" counter-type="decr"
+hump-while="variableName" counter-type="incr"
+```
+
+### Required parameters  ###
+> hump-while is required as string(name of variable)
+
+> counter-type is required as string(i.e. either decr or incr)
+
+
+## Example: ##
+Create a PHP file with name `hump_while.php`
+
+```php
+<?php
+ini_set('display_errors', 1);
+require_once 'vendor/autoload.php';  
+try
+{
+
+    $obj = new PHPHump\Hump("/var/www/html/PHP/PHPHump/Examples/hump_while.hump.php");
+    $obj->title = "Hump While Tutorial";
+
+    $obj->variableName = 5;
+    $obj->someValue = range(0, 9);
+    echo $obj->execute();  
+    
+} 
+catch (Exception $ex) 
+{
+    echo $ex->getMessage();;
+}
+?>
+```
+
+
+Create an HTML file with name `hump_while.hump.php`
+```HTML
+<html>
+    <head>
+        <title>#[title]#</title>
+    </head>
+    <body>
+        <div hump-while="variableName" counter-type="decr">
+            <span>#[someValue]#</span>
+        </div>
+    </body>
+</html>
+```
+
+Output
+
+```HTML
+<html>
+    <head>
+        <title>Hump While Tutorial</title>
+    </head>
+    <body>
+        <div>
+            <span>[0,1,2,3,4,5,6,7,8,9]</span>
+        </div>
+        <div>
+            <span>[0,1,2,3,4,5,6,7,8,9]</span>
+        </div>
+        <div>
+            <span>[0,1,2,3,4,5,6,7,8,9]</span>
+        </div>
+        <div>
+            <span>[0,1,2,3,4,5,6,7,8,9]</span>
+        </div>
+        <div>
+            <span>[0,1,2,3,4,5,6,7,8,9]</span>
+        </div>
+    </body>
+</html>
+```
