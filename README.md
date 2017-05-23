@@ -3,6 +3,21 @@
 This framework is designed and authored, with an aim to separate `PHP` and `HTML`. Usually it is a messy task to understand PHP and HTML in combined state. This framework allows you to have a clean environment, while working on any environment whether it is production and staging. It support no. of features with a simple and light weight framework.
 
 
+## Installation
+`composer require sahil-gulati/phphump`
+
+**OR**
+
+```javascript
+{
+    "require":{
+        "sahil-gulati/phphump": "1.0.0"
+    }
+}
+```
+`composer install`
+
+
 # Tradition way #
 
 ```HTML
