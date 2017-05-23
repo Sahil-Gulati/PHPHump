@@ -110,8 +110,8 @@ class Coordinator extends Ops
                     {
                         throw new \PHPHump\Exception\File(500,\PHPHump\Constants\File::CONFIG_FILE_TYPE);
                     }
-                    $this->__execute(\PHPHump\Constants\File::CONFIG_FILE_TYPE);
                 }
+                $this->__execute(\PHPHump\Constants\File::CONFIG_FILE_TYPE);
                 break;
         }
     }
