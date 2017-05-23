@@ -274,7 +274,11 @@ class Ops
         $tempTagsArray=array();
         while(count($tagsArray)!=0)
         {
-            if(self::isOpeningTag(self::getElement($tagsArray)))
+            if(self::isIgnoringTag(\PHPHump\Reader\Config::$ignoringTags["starts_with"], self::getElement($tagsArray)))
+            {
+                $tagsArray=self::unsetFirstElement($tagsArray);
+            }
+            else if(self::isOpeningTag(self::getElement($tagsArray)))
             {
                 $tempTagsArray[]=  self::getTagName(self::getElement($tagsArray));
                 $tagsArray=self::unsetFirstElement($tagsArray);
@@ -286,7 +290,7 @@ class Ops
                     $tempTagsArray=self::unsetLastElement($tempTagsArray);
                     $tagsArray=self::unsetFirstElement($tagsArray);
                 }
-                if(count($tempTagsArray)==0 && self::isClosingTag(self::getElement($tagsArray)))//yet to work
+                if(count($tempTagsArray)==0 && self::isClosingTag(self::getElement($tagsArray)))
                 {
                     break;
                 }
