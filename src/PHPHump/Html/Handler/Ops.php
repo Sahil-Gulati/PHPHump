@@ -169,7 +169,7 @@ class Ops
     }
     public static function getAttributes($tag)
     {
-        preg_match_all("#[\w\-]+\=(?:\"|\')[^\"\']+(?:\"|\')#", $tag,$matches);
+        preg_match_all("#[\w\-]+\s*\=\s*(?:\"|\')[^\"\']+(?:\"|\')#", $tag,$matches);
         return $matches[0];
     }
     public static function trimAttribute($tag,$attributeName)
@@ -228,7 +228,7 @@ class Ops
             $attributes=self::getAttributes($tag);
             foreach($attributes as $attribute)
             {
-                if(strpos($attribute, $attributeName."=")===0)
+                if(preg_match("/".$attributeName."\s*=\s*/",$attribute,$matches))
                 {
                     $attriuteValue=explode("=", $attribute);
                     preg_match("#(?:\"|\')([^\"\']+)(?:\"|\')#", $attriuteValue[1],$matches);
@@ -244,7 +244,11 @@ class Ops
         while(count($tagsArray)!=0)
         {
             $firstElement=self::getElement($tagsArray);
-            if(self::isOpeningTag($firstElement))
+            if(self::isIgnoringTag(\PHPHump\Reader\Config::$ignoringTags['starts_with'], $firstElement))
+            {
+                $tagsArray=self::unsetFirstElement($tagsArray);
+            }
+            elseif(self::isOpeningTag($firstElement))
             {
                 $tempTagsArray[]=self::getTagName($firstElement);
                 $innerHtmlArray[]=self::getElement($tagsArray);
