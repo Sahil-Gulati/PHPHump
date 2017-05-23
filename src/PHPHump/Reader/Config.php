@@ -11,7 +11,9 @@ class Config
      * and Valid content 
      */
     private $configJson="";
-    public static $ignoringTags=array();
+    public static $ignoringTags=array(
+            "starts_with"=>array("<!DOCTYPE","<hr","<br","<input","<img","<source","<area","<base","<frame","<link","<meta"),
+            "ends_with"=>array());
     public static $globalRequire=array();
     public static $errorStatus=true;
     public static $erroredVariabledReplacement=array('{','}');
@@ -21,9 +23,9 @@ class Config
     }
     public function configure()
     {
-        self::$globalRequire=$this->setGlobalRequirements();
-        self::$errorStatus=$this->setErrorsStatus();
-        self::$ignoringTags=$this->setIgnoringTags();
+        $this->setGlobalRequirements();
+        $this->setErrorsStatus();
+        $this->setIgnoringTags();
         $this->setErroredVariableReplacement();
     }
     
@@ -53,7 +55,7 @@ class Config
                 }
             }
         }
-        return $ignoringTags;
+        self::$ignoringTags["starts_with"]=  array_merge(self::$ignoringTags["starts_with"],$ignoringTags["starts_with"]);
     }
     
     private function setGlobalRequirements()
@@ -76,12 +78,12 @@ class Config
             {
                 if(is_bool($jsonObject->debug_errors))
                 {
-                    return $jsonObject->debug_errors;
+                    self::$errorStatus= $jsonObject->debug_errors;
                 }
             }
             else
             {
-                return true;
+                self::$errorStatus= true;
             }
         }
     }
