@@ -60,7 +60,7 @@ class Ops
     {
         foreach($ignoringTagsArray as $ignoringTag)
         {
-            if(strpos($tag, $ignoringTag)===0)
+            if(stripos($tag, $ignoringTag)===0)
             {
                 return true;
             }
