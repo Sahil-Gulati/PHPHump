@@ -241,17 +241,20 @@ class Ops
     {
         $tempTagsArray=array();
         $innerHtmlArray=array();
+        $innerHtmlArrayWithEmptyTags=array();
         while(count($tagsArray)!=0)
         {
             $firstElement=self::getElement($tagsArray);
             if(self::isIgnoringTag(\PHPHump\Reader\Config::$ignoringTags['starts_with'], $firstElement))
             {
+                $innerHtmlArrayWithEmptyTags[]=$firstElement;
                 $tagsArray=self::unsetFirstElement($tagsArray);
             }
             elseif(self::isOpeningTag($firstElement))
             {
                 $tempTagsArray[]=self::getTagName($firstElement);
                 $innerHtmlArray[]=self::getElement($tagsArray);
+                $innerHtmlArrayWithEmptyTags[]=$firstElement;
                 $tagsArray=self::unsetFirstElement($tagsArray);
             }
             else if(self::isClosingTag($firstElement))
@@ -260,6 +263,7 @@ class Ops
                 {
                     $tempTagsArray=self::unsetLastElement($tempTagsArray);
                     $innerHtmlArray[]=self::getElement($tagsArray);
+                    $innerHtmlArrayWithEmptyTags[]=$firstElement;
                     $tagsArray=self::unsetFirstElement($tagsArray);
                 }
                 /**
@@ -271,7 +275,7 @@ class Ops
                 }
             }
         }
-        return $innerHtmlArray;
+        return $innerHtmlArrayWithEmptyTags;;
     }
     public static function unsetInnerHtml(array $tagsArray=array())
     {
