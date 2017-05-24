@@ -1,6 +1,6 @@
 # PHPHump #
 
-This framework is designed and authored, with an aim to separate `PHP` and `HTML`. Usually it is a messy task to understand PHP and HTML in combined state. This framework allows you to have a clean environment, while working on any environment whether it is production and staging. It support no. of features with a simple and light weight framework.
+This framework is designed and authored, with an aim to separate `PHP` and `HTML`. Usually it is a messy task to understand PHP and HTML in combined state. This framework allows you to have a clean environment, while working on code base whether it is production and staging. It support no. of features like dynamic templating, dynamic assigning, variable definition, html switching etc.
 
 
 ## Installation
