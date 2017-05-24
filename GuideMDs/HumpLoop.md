@@ -1,6 +1,6 @@
 # Hump Loop #
 
-For iterating over an array which can be single dimensional or multi-dimensional You can iterate a given piece of HTML.
+Usually we iterate over data content and HTML content within the forloop by echoing out. Here we are skipping that tradition way of wrapping your content with HTML tags.
 
 
 ## Loop Syntax ##
