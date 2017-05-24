@@ -4,7 +4,10 @@ Sometimes we dynamically want to assign values rather than on PHP.
 
 ## Syntax ##
 ```HTML
-<humpAssign key="name" value="value"></humpAssign>
+<humpAssign key="name" value="value"></humpAssign> <!--- both can be static -->
+<humpAssign key="#[name]#" value="value"></humpAssign> <!--- key can be dynamic -->
+<humpAssign key="name" value="#[value]#"></humpAssign> <!--- value can be dynamic -->
+<humpAssign key="#[name]#" value="#[value]#"></humpAssign> <!-- both can be dynamic -->
 ```
 
 ### Required parameters  ###
