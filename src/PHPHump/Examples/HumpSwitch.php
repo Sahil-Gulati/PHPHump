@@ -3,28 +3,24 @@
         <title>#[title]#</title>
     </head>
     <body>
-        
-    <humpSwitch switch-over="testingVar" hump-if="testingVar">
-    
-        <humpCase case="new">
+    <humpSwitch switch-over="someVariable" hump-if="someVariable">
+        <humpCase case="x">
             <div>
-                I am new here
+                I am new here with value #[someVariable]#
             </div>
         </humpCase>
-        
-        <humpCase case="new1">
+
+        <humpCase case="y">
             <div>
-                I am new1 here
+                I am new here with value #[someVariable]#
             </div>
         </humpCase>
         <humpDefault>
             <div>
-                #[testingVar]#
+                I am new here with value #[someVariable]#
             </div>
         </humpDefault>
-            
     </humpSwitch>
-    <div>Simple div for testing</div>
-    
-    </body>
+    <div>Simple div</div>
+</body>
 </html>
