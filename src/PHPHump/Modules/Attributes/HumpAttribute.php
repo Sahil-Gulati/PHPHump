@@ -8,12 +8,12 @@ class HumpAttribute extends \PHPHump\Modules\Tags\HumpSwitch
 {
     protected function attributize($tagsArray)
     {
-        $attributeValue= parent::getAttribute(parent::getElement($tagsArray),"hump-attribute");
+        $tag=  parent::modify(parent::getElement($tagsArray));
+        $tagsArray =  parent::unsetFirstElement($tagsArray);
+        $attributeValue= parent::getAttribute($tag,"hump-attribute");
         list($exists,$value)=parent::retrieveValue($attributeValue);
         if($exists===true)
         {
-            $tag=  parent::getElement($tagsArray);
-            $tagsArray =  parent::unsetFirstElement($tagsArray);
             $tag=  parent::trimAttribute(parent::addAttributes($tag, $value), "hump-attribute");
             $tagsArray=array_merge(
                     array(
@@ -21,6 +21,10 @@ class HumpAttribute extends \PHPHump\Modules\Tags\HumpSwitch
                         $tag
                     ),
                     $tagsArray);
+        }
+        else
+        {
+            \PHPHump\Exception\Variable::isThrowable($attributeValue, false);
         }
         return $tagsArray;
     }
