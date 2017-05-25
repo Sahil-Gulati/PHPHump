@@ -30,11 +30,11 @@ class HumpIf extends HumpLoop
     {
         $result=array();
         $attribute=$this->modify($attribute);
-        if(preg_match('#^\s*([a-zA-Z0-9\_]+)\s*$#',$attribute,$matches))
+        if(preg_match('#^\s*([a-zA-Z0-9\_\.]+)\s*$#',$attribute,$matches))
         {
             $result["variable_name"]=$matches[1];
         }
-        elseif(preg_match('#^\s*not\(\s*([a-zA-Z0-9\_]+)\s*\)\s*$#',$attribute,$matches))
+        elseif(preg_match('#^\s*not\(\s*([a-zA-Z0-9\_\.]+)\s*\)\s*$#',$attribute,$matches))
         {
             $result["variable_name"]=$matches[1];
             $result["is_not"]=true;
