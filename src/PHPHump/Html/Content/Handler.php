@@ -9,7 +9,7 @@ class Handler
 {
     public function modify($tag)
     {
-        while(preg_match('/#\[([\w]+)\]#/', $tag,$variables))
+        while(preg_match('/#\[([\w\.]+)\]#/', $tag,$variables))
         {
             list($exists,$variableValue)=self::retrieveValue($variables[1]);
             if($exists===true)
