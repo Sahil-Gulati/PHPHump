@@ -387,7 +387,7 @@ class Ops
         array_shift($tag);
         return implode("-->", $tag);
     }
-    private static function isDeadLocking($oldTime, $newTime,$message)
+    public static function isDeadLocking($oldTime, $newTime,$message)
     {
         if($newTime-$oldTime > \PHPHump\Reader\Config::$deadLockPeriod)
         {
