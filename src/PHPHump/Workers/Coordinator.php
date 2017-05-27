@@ -122,10 +122,8 @@ class Coordinator extends Ops
         {
             case \PHPHump\Constants\File::TEMPLATE_FILE_TYPE:
                 $string= (new \PHPHump\Html\Handler\Manager($this->templateHtml,$this))->prepare();
-                if(Ops::validateHtml($string))
-                {
-                    return $string;
-                }
+                Ops::validateHtml($string);
+                return $string;
                 break;
             case \PHPHump\Constants\File::CONFIG_FILE_TYPE:
                 (new \PHPHump\Reader\Config($this->configJson))->configure();
