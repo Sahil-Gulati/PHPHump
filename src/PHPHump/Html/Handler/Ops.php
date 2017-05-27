@@ -391,7 +391,7 @@ class Ops
     {
         if($newTime-$oldTime > \PHPHump\Reader\Config::$deadLockPeriod)
         {
-            throw new Exception("Deadlocking period reached while $message!");
+            throw new \Exception("Deadlocking period reached while $message!");
         }
     }
 }   
