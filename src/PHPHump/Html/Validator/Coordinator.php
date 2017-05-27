@@ -60,9 +60,11 @@ namespace PHPHump\Html\Validator;
     {
         $tempTagsArray=array();
         $tagsArray=parent::extractTags($this->htmlString);
+        $previousTime=time();
         $index=1;
         while(count($tagsArray)!=0)
         {
+            \PHPHump\Html\Handler\Ops::isDeadLocking($previousTime, time(), "validating html");
             $tagName=Ops::getTagName($tagsArray[$index]);
             if(parent::isInIgnoringTags($tagsArray[$index]))
             {
