@@ -21,7 +21,14 @@ class HumpIf extends HumpLoop
         else
         {
             $tagsArray= parent::unsetFirstElement($tagsArray);
-            $tagsArray=parent::unsetInnerHtml($tagsArray);
+            if(parent::isIgnoringTag(\PHPHump\Reader\Config::$ignoringTags["starts_with"], $tag)===false)
+            {
+                $tagsArray=parent::unsetInnerHtml($tagsArray);
+            }
+            else
+            {
+                $tagsArray=  array_merge(array("<empty>"),$tagsArray); 
+            }
         }
         return $tagsArray;
     }
