@@ -242,8 +242,10 @@ class Ops
         $tempTagsArray=array();
         $innerHtmlArray=array();
         $innerHtmlArrayWithEmptyTags=array();
+        $previousTime=time();
         while(count($tagsArray)!=0)
         {
+            self::isDeadLocking($previousTime, time(), "getting inner html");
             $firstElement=self::getElement($tagsArray);
             if(self::isIgnoringTag(\PHPHump\Reader\Config::$ignoringTags['starts_with'], $firstElement))
             {
@@ -280,8 +282,10 @@ class Ops
     public static function unsetInnerHtml(array $tagsArray=array())
     {
         $tempTagsArray=array();
+        $previousTime=time();
         while(count($tagsArray)!=0)
         {
+            self::isDeadLocking($previousTime, time(), "unsetting inner html");
             if(self::isIgnoringTag(\PHPHump\Reader\Config::$ignoringTags["starts_with"], self::getElement($tagsArray)))
             {
                 $tagsArray=self::unsetFirstElement($tagsArray);
@@ -319,8 +323,10 @@ class Ops
         $tempTagsArray=array();
         $modulesArray=array();
         $moduleCounter=0;
+        $previousTime=time();
         while(count($tagsArray)>0)
         {
+            self::isDeadLocking($previousTime, time(), "extracting modules");
             if(self::isOpeningTag(self::getElement($tagsArray)))
             {
                 $tempTagsArray[]= self::getTagName(self::getElement($tagsArray));
@@ -380,5 +386,12 @@ class Ops
         $tag=explode("-->",$tag);
         array_shift($tag);
         return implode("-->", $tag);
+    }
+    private static function isDeadLocking($oldTime, $newTime,$message)
+    {
+        if($newTime-$oldTime > \PHPHump\Reader\Config::$deadLockPeriod)
+        {
+            throw new Exception("Deadlocking period reached while $message!");
+        }
     }
 }   
