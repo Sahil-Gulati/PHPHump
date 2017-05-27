@@ -17,6 +17,7 @@ class Config
     public static $globalRequire=array();
     public static $errorStatus=true;
     public static $erroredVariabledReplacement=array('{','}');
+    public static $deadLockPeriod=2;
     public function __construct($configJson)
     {
         $this->configJson=$configJson;
@@ -27,6 +28,7 @@ class Config
         $this->setErrorsStatus();
         $this->setIgnoringTags();
         $this->setErroredVariableReplacement();
+        $this->setDeadLockPeriod();
     }
     
     private function setIgnoringTags($startsWith=true,$endsWith=false)
@@ -101,6 +103,20 @@ class Config
                 if(property_exists($jsonObject->error_variable, "postfix") && !preg_match('/^\s*\]\s*\#/',$jsonObject->error_variable->postfix))
                 {
                     self::$erroredVariabledReplacement[1]=$jsonObject->error_variable->postfix;
+                }
+            }
+        }
+    }
+    private function setDeadLockPeriod()
+    {
+        if(!empty($this->configJson))
+        {
+            $jsonObject=json_decode($this->configJson);
+            if(property_exists($jsonObject, "deadlock_period"))
+            {
+                if(is_numeric($jsonObject->deadlock_period))
+                {
+                    self::$deadLockPeriod=$jsonObject->deadlock_period;
                 }
             }
         }
