@@ -1,13 +1,17 @@
 # Hump Loop #
 
-For iterating over an array which can be single dimensional or multi-dimensional You can iterate a given piece of HTML.
+Usually we iterate over data content and HTML content within the forloop by echoing out. Here we are skipping that tradition way of wrapping your content with HTML tags.
 
 
 ## Loop Syntax ##
 
 ```HTML
-1. hump-loop="variableName as value"
-2. hump-loop="variableName as key -> value"
+<div hump-loop="variableName as value"> <!--- this div will also be repeated-->
+        <!--- content goes here -->
+</div> 
+<div hump-loop="variableName as key -> value"> <!--- this div will also be repeated-->
+        <!--- content goes here -->
+</div>  
 ```
 
 

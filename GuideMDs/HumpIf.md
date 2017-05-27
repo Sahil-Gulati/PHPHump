@@ -2,16 +2,21 @@
 There can be no. of condition on which you want to 
 
 
-## If Syntax ##
-
-> hump-if="variableName"
-
-> hump-if="not(variableName)"
-
-> hump-if="variableName->someArrayIndex->nestedIndex"
-
-> hump-if="not(variableName->someArrayIndex->nestedIndex)"
-
+## Syntax ##
+```html
+<div hump-if="variableName">   <!--- check for isset likewise in php -->
+    <!--- content goes here -->
+</div>
+<div hump-if="not(variableName)"> <!--- check for !isset likewise in php -->
+    <!--- content goes here -->
+</div>
+<div hump-if="variableName->someArrayIndex->nestedIndex"> <!--- check for isset($variableName['someArrayIndex']['nestedIndex']) likewise in php -->
+    <!--- content goes here -->
+</div>
+<div hump-if="not(variableName->someArrayIndex->nestedIndex)"> <!--- check for !isset($variableName['someArrayIndex']['nestedIndex']) likewise in php -->
+    <!--- content goes here -->
+</div>
+```
 
 ## Example: ##
 Create a PHP file with name `hump_loop.php`
