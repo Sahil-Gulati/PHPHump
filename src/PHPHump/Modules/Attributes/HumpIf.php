@@ -8,18 +8,19 @@ class HumpIf extends HumpLoop
 {
     public function conditional(array $tagsArray=array())
     {
-        $tag=  parent::modify(parent::getElement($tagsArray));
-        $tagsArray=array_merge(array($tag),parent::unsetFirstElement($tagsArray));
         $attribute=parent::getAttribute(parent::getElement($tagsArray),"hump-if");
         $attributeData=$this->parseIfAttribute($attribute);
         if($this->executeIfBlock($attributeData))
         {
+            $tag=  parent::modify(parent::getElement($tagsArray));
+            $tagsArray=array_merge(array($tag),parent::unsetFirstElement($tagsArray));
             $trimmedTag= parent::trimAttribute(parent::getElement($tagsArray),"hump-if");
             $tagsArray=  array_merge(array($trimmedTag),parent::unsetFirstElement($tagsArray));
             $tagsArray=  array_merge(array("<empty>"),$tagsArray);   
         }
         else
         {
+            $tag=  parent::getElement($tagsArray);
             $tagsArray= parent::unsetFirstElement($tagsArray);
             if(parent::isIgnoringTag(\PHPHump\Reader\Config::$ignoringTags["starts_with"], $tag)===false)
             {
