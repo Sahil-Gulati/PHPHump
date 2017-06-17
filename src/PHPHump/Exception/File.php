@@ -5,20 +5,14 @@ namespace PHPHump\Exception;
  * @author Sahil Gulati <sahil.gulati1991@outlook.com>
  * @desc
  */
-class File extends \Exception
+class File
 {
-
     private static $fileErrorCodes=array(
         404,
         500
     );
     
-    public function __construct($code,$filePath="")
-    {
-        $message=self::getErroredMessage($code,$filePath);
-        parent::__construct($message);
-    }
-    private static function getErroredMessage($code,$filePath="")
+    private static function getExtendedMessage($code,$filePath="")
     {
         if(in_array($code, self::$fileErrorCodes))
         {
