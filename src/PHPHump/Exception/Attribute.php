@@ -9,29 +9,24 @@ class Attribute extends \Exception
 {
     protected static $configVarStype="'background-color:#ededed;;border-radius:5px;border:1px dotted grey;padding:2px;cursor:pointer'";
     
-    public function __construct($errorCode,$variableName="")
+    public static function getExtendedMessage($errorCode,$variableName="")
     {
         switch ($errorCode)
         {
             case 1:
-                parent::__construct($this->getLoopError($variableName));
-                break;
+                return self::getLoopError($variableName);
             case 2:
-                parent::__construct($this->getWhileCounterError($variableName));
-                break;
+                return self::getWhileCounterError($variableName);
             case 3:
-                parent::__construct($this->getWhileVariableError($variableName));
-                break;
+                return self::getWhileVariableError($variableName);
             case 4:
-                parent::__construct($this->getAssignError($variableName));
-                break;
+                return self::getAssignError($variableName);
             case 5:
-                parent::__construct($this->getRequireError($variableName));
-                break;
+                return self::getRequireError($variableName);
         }
     }
     
-    public function getLoopError($variableName)
+    public static function getLoopError($variableName)
     {
         $string="<h1 style='color:#c44b4b;font-size:20px;margin-bottom:5px;'>PHPHump Exception!</h1>";
         $string.="<p style='color:#6d5c5c;font-family:monospace;font-size:16px;margin-bottom:1px;font-weight:bolder'>Invalid loop attribute!</p>";
@@ -43,7 +38,7 @@ class Attribute extends \Exception
         $string.="<p style='color:#6d5c5c;font-family:monospace;font-size:12px;margin-bottom:1px;margin-top:5px;font-weight:bolder'></p>";
         return $string;
     }
-    public function getWhileCounterError($variableName)
+    public static function getWhileCounterError($variableName)
     {
         $string="<h1 style='color:#c44b4b;font-size:20px;margin-bottom:5px;'>PHPHump Exception!</h1>";
         $string.="<p style='color:#6d5c5c;font-family:monospace;font-size:16px;margin-bottom:1px;font-weight:bolder'>Invalid while counter attribute!</p>";
@@ -55,7 +50,7 @@ class Attribute extends \Exception
         $string.="<p style='color:#6d5c5c;font-family:monospace;font-size:12px;margin-bottom:1px;margin-top:5px;font-weight:bolder'></p>";
         return $string;
     }
-    public function getWhileVariableError($variableName)
+    public static function getWhileVariableError($variableName)
     {
         $string="<h1 style='color:#c44b4b;font-size:20px;margin-bottom:5px;'>PHPHump Exception!</h1>";
         $string.="<p style='color:#6d5c5c;font-family:monospace;font-size:16px;margin-bottom:1px;font-weight:bolder'>Invalid while attribute!</p>";
@@ -63,7 +58,7 @@ class Attribute extends \Exception
         $string.="<p style='color:#6d5c5c;font-family:monospace;font-size:12px;margin-bottom:1px;margin-top:5px;font-weight:bolder'>A valid Hump-while <span style=".self::$configVarStype.">variable</span> can only be integer</p>";
         return $string;
     }
-    public function getAssignError($variableName)
+    public static function getAssignError($variableName)
     {
         $string="<h1 style='color:#c44b4b;font-size:20px;margin-bottom:5px;'>PHPHump Exception!</h1>";
         $string.="<p style='color:#6d5c5c;font-family:monospace;font-size:16px;margin-bottom:1px;font-weight:bolder'>Invalid assign attribute!</p>";
@@ -73,7 +68,7 @@ class Attribute extends \Exception
         $string.="<p style='color:#6d5c5c;font-family:monospace;font-size:12px;margin-bottom:1px;margin-top:5px;font-weight:bolder'><span style=".self::$configVarStype.">Note:</span> It can support dynamic values.</p>";
         return $string;
     }
-    public function getRequireError($variableName)
+    public static function getRequireError($variableName)
     {
         $string="<h1 style='color:#c44b4b;font-size:20px;margin-bottom:5px;'>PHPHump Exception!</h1>";
         $string.="<p style='color:#6d5c5c;font-family:monospace;font-size:16px;margin-bottom:1px;font-weight:bolder'>Invalid file attribute!</p>";
