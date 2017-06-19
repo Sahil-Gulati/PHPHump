@@ -36,8 +36,8 @@ class Exception extends \Exception
                 }
                 else
                 {
-                    $message=\PHPHump\Exception\Variable::getMessage($arguments[1],$arguments[2]);
-                    $this->extendedMessage=\PHPHump\Exception\Variable::getExtendedMessage($arguments[1],$arguments[2]);
+                    $message=  \PHPHump\Exception\File::getMessage($arguments[1],$arguments[2]);
+                    $this->extendedMessage=\PHPHump\Exception\File::getExtendedMessage($arguments[1],$arguments[2]);
                 }
                 break;
             case \PHPHump\Constants\Exception::ATTRIBUTE:
@@ -49,8 +49,8 @@ class Exception extends \Exception
                 }
                 else
                 {
-                    $message=\PHPHump\Exception\Variable::getMessage($arguments[1],$arguments[2]);
-                    $this->extendedMessage=\PHPHump\Exception\Variable::getExtendedMessage($arguments[1],$arguments[2]);
+                    $message=\PHPHump\Exception\Attribute::getMessage($arguments[1],$arguments[2]);
+                    $this->extendedMessage=  \PHPHump\Exception\Attribute::getExtendedMessage($arguments[1],$arguments[2]);
                 }
                 break;
             case \PHPHump\Constants\Exception::VALIDATOR:
@@ -62,8 +62,8 @@ class Exception extends \Exception
                 }
                 else
                 {
-                    $message=\PHPHump\Exception\Variable::getMessage($arguments[1],$arguments[2]);
-                    $this->extendedMessage=\PHPHump\Exception\Variable::getExtendedMessage($arguments[1],$arguments[2]);
+                    $message=  \PHPHump\Exception\Validator::getMessage($arguments[1],$arguments[2]);
+                    $this->extendedMessage=\PHPHump\Exception\Validator::getExtendedMessage($arguments[1],$arguments[2]);
                 }
                 break;
         }
