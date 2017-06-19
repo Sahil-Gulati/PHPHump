@@ -22,11 +22,11 @@ class HumpRequire extends \PHPHump\Html\Handler\Ops
     {
         if(empty($filePath))
         {
-            throw new \PHPHump\Exception\Attribute(5,$filePath);
+            throw new \PHPHump\Exception\Exception(\PHPHump\Constants\Exception::ATTRIBUTE,5,$filePath);
         }
         if(!file_exists($filePath))
         {
-            throw new \PHPHump\Exception\File(404,$filePath);
+            throw new \PHPHump\Exception\Exception(\PHPHump\Constants\Exception::FILE,404,$filePath);
         }
     }
     public static function modify($tag)
