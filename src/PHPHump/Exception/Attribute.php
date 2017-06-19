@@ -5,10 +5,26 @@
  * @desc
  */
 namespace PHPHump\Exception;
-class Attribute extends \Exception
+class Attribute
 {
     protected static $configVarStype="'background-color:#ededed;;border-radius:5px;border:1px dotted grey;padding:2px;cursor:pointer'";
     
+    public static function getMessage($errorCode,$variableName="")
+    {
+        switch ($errorCode)
+        {
+            case 1:
+                return "Invalid loop attribute $variableName!";
+            case 2:
+                return "Invalid while counter attribute $variableName!";
+            case 3:
+                return "Invalid while attribute $variableName!";
+            case 4:
+                return "Invalid assign attribute key can't be empty!";
+            case 5:
+                return "File attribute can't be empty!";
+        }
+    }
     public static function getExtendedMessage($errorCode,$variableName="")
     {
         switch ($errorCode)
