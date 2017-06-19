@@ -94,7 +94,10 @@ class Handler
     {
         if(\PHPHump\Reader\Config::$errorStatus===true)
         {
-            throw new \PHPHump\Exception\Variable($variables[1],$isNested);
+            throw new \PHPHump\Exception\Exception(
+                    \PHPHump\Constants\Exception::VARIABLE,
+                    $variables[1],
+                    $isNested);
         }
         else
         {
