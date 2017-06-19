@@ -12,6 +12,7 @@ class Exception extends \Exception
     public function __construct($errorType)
     {
         $arguments=  func_get_args();
+        print_r($arguments);
         switch ($errorType)
         {
             case \PHPHump\Constants\Exception::VARIABLE:
@@ -62,8 +63,8 @@ class Exception extends \Exception
                 }
                 else
                 {
-                    $message=  \PHPHump\Exception\Validator::getMessage($arguments[1],$arguments[2]);
-                    $this->extendedMessage=\PHPHump\Exception\Validator::getExtendedMessage($arguments[1],$arguments[2]);
+                    $message=  \PHPHump\Exception\Validator::getMessage($arguments[2]);
+                    $this->extendedMessage=\PHPHump\Exception\Validator::getExtendedMessage($arguments[2]);
                 }
                 break;
         }
