@@ -24,25 +24,26 @@ class Coordinator extends \PHPHump\Modules\Attributes\HumpIf
     }
     protected function __prepare($tagsArray)
     {
+        $attributePrefix= \PHPHump\Reader\Config::$attributePrefix;
         while(count($tagsArray)>0)
         {
-            if(!empty(parent::getAttribute(parent::getElement($tagsArray),"hump-attribute")))
+            if(!empty(parent::getAttribute(parent::getElement($tagsArray),"$attributePrefix-attribute")))
             {
                 $tagsArray=$this->attributize($tagsArray);
             }
-            elseif(!empty(parent::getAttribute(parent::getElement($tagsArray),"hump-if")) && !empty(parent::getAttribute(parent::getElement($tagsArray),"hump-loop")))
+            elseif(!empty(parent::getAttribute(parent::getElement($tagsArray),"$attributePrefix-if")) && !empty(parent::getAttribute(parent::getElement($tagsArray),"$attributePrefix-loop")))
             {
                 $tagsArray=$this->conditionalLoop($tagsArray);
             }
-            elseif(!empty(parent::getAttribute(parent::getElement($tagsArray),"hump-if")))
+            elseif(!empty(parent::getAttribute(parent::getElement($tagsArray),"$attributePrefix-if")))
             {
                 $tagsArray=$this->conditional($tagsArray);
             }
-            elseif(!empty(parent::getAttribute(parent::getElement($tagsArray), "hump-loop")))
+            elseif(!empty(parent::getAttribute(parent::getElement($tagsArray), "$attributePrefix-loop")))
             {
                 $tagsArray=$this->loopify($tagsArray);
             }
-            elseif(!empty (parent::getAttribute(parent::getElement($tagsArray),"hump-while")))
+            elseif(!empty (parent::getAttribute(parent::getElement($tagsArray),"$attributePrefix-while")))
             {
                 $tagsArray=$this->whileLoop($tagsArray);
             }
