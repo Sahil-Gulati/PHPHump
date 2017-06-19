@@ -13,7 +13,7 @@ class HumpAssign extends HumpRequire
         $key=  parent::getAttribute(parent::modify($firstElement), "key");
         if(empty($key))
         {
-            throw new \PHPHump\Exception\Attribute(4);
+            throw new \PHPHump\Exception\Exception(\PHPHump\Constants\Exception::ATTRIBUTE,4,"");
         }
         $value=  parent::getAttribute($firstElement, "value");
         self::setValue($key, $value);
