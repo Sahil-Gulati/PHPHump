@@ -12,7 +12,18 @@ class Config
      */
     private $configJson="";
     public static $ignoringTags=array(
-            "starts_with"=>array("<!DOCTYPE","<hr","<br","<input","<img","<source","<area","<base","<frame","<link","<meta"),
+            "starts_with"=>array(
+                "<!DOCTYPE",
+                "<hr",
+                "<br",
+                "<input",
+                "<img",
+                "<source",
+                "<area",
+                "<base",
+                "<frame",
+                "<link",
+                "<meta"),
             "ends_with"=>array());
     public static $globalRequire=array();
     public static $errorStatus=true;
