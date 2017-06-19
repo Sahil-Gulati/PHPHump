@@ -12,7 +12,6 @@ class Exception extends \Exception
     public function __construct($errorType)
     {
         $arguments=  func_get_args();
-        print_r($arguments);
         switch ($errorType)
         {
             case \PHPHump\Constants\Exception::VARIABLE:
