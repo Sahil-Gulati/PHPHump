@@ -52,11 +52,11 @@ class HumpWhile extends HumpAttribute
     {
         if(!is_int($loopVariable))
         {
-            throw new \PHPHump\Exception\Attribute(3);
+            throw new \PHPHump\Exception\Exception(\PHPHump\Constants\Exception::ATTRIBUTE,3,"");
         }
         if(!in_array($counterType, $this->validCounterTypes))
         {
-            throw new \PHPHump\Exception\Attribute(2,$counterType);
+            throw new \PHPHump\Exception\Exception(\PHPHump\Constants\Exception::ATTRIBUTE,2,$counterType);
         }
         return true;
     }
