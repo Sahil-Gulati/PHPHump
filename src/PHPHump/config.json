@@ -11,5 +11,6 @@
     "error_variable":{
         "prefix":":",
         "postfix":":"
-    }
+    },
+    "attribute_prefix":"hump"
 }
