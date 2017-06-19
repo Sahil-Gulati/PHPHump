@@ -86,7 +86,7 @@ class HumpLoop extends HumpWhile
         }
         else
         {
-            throw new \PHPHump\Exception\Attribute(1,$attribute);
+            throw new \PHPHump\Exception\Exception(\PHPHump\Constants\Exception::ATTRIBUTE,1,$attribute);
         }
         return $loopAttributes;
     }
