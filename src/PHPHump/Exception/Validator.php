@@ -4,20 +4,27 @@ namespace PHPHump\Exception;
  * @author Sahil Gulati <sahil.gulati1991@outlook.com>
  * @desc
  */
-class Validator extends \Exception
-{
-    private $exceptionString="";
-    public function __construct($exceptionCode,\stdClass $stdClassObject)
-    {
-        $this->getExtendedMessage($stdClassObject);
-        parent::__construct($this->exceptionString);
-    }
-    public function getExtendedMessage(\stdClass $stdClassObject)
+class Validator
+{   
+    public static function getMessage(\stdClass $stdClassObject)
     {
         switch ($stdClassObject->errorType)
         {
             case 1:
-                $this->exceptionString="Errored tag `$stdClassObject->erroredTag` on line no `$stdClassObject->lineNo`!";
+                $exceptionString="Errored tag `$stdClassObject->erroredTag` on line no `$stdClassObject->lineNo`!";
+            break;
+            case 2:
+                $exceptionString="Expected tag `$stdClassObject->expectedTag`, Errored tag `$stdClassObject->erroredTag` on line no `$stdClassObject->lineNo`!";
+            break;
+        }
+        return $exceptionString;
+    }
+    public static function getExtendedMessage(\stdClass $stdClassObject)
+    {
+        switch ($stdClassObject->errorType)
+        {
+            case 1:
+                $exceptionString="Errored tag `$stdClassObject->erroredTag` on line no `$stdClassObject->lineNo`!";
                 $string="<h1 style='color:#c44b4b;font-size:20px;margin-bottom:5px;'>PHPHump Exception!</h1>";
                 $string.="<p style='color:#6d5c5c;font-family:monospace;font-size:16px;margin-bottom:1px;font-weight:bolder'>Unexpected tag!</p>";
                 $string.="<p style='color:#6d5c5c;font-family:monospace;font-size:12px;margin-bottom:1px;margin-top:1px;font-weight:bolder'>Line no: $stdClassObject->lineNo</p>";
@@ -26,7 +33,7 @@ class Validator extends \Exception
                 return $string;
             break;
             case 2:
-                $this->exceptionString="Expected tag `$stdClassObject->expectedTag`, Errored tag `$stdClassObject->erroredTag` on line no `$stdClassObject->lineNo`!";
+                $exceptionString="Expected tag `$stdClassObject->expectedTag`, Errored tag `$stdClassObject->erroredTag` on line no `$stdClassObject->lineNo`!";
                 $string="<h1 style='color:#c44b4b;font-size:20px;margin-bottom:5px;'>PHPHump Exception!</h1>";
                 $string.="<p style='color:#6d5c5c;font-family:monospace;font-size:16px;margin-bottom:1px;font-weight:bolder'>Tag mismatch!</p>";
                 $string.="<p style='color:#6d5c5c;font-family:monospace;font-size:12px;margin-bottom:1px;margin-top:1px;font-weight:bolder'>Line no: $stdClassObject->lineNo</p>";
