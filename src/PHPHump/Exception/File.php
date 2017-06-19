@@ -12,7 +12,20 @@ class File
         500
     );
     
-    private static function getExtendedMessage($code,$filePath="")
+    public static function getMessage($code,$filePath="")
+    {
+        if(in_array($code, self::$fileErrorCodes))
+        {
+            switch ($code)
+            {
+                case 404:
+                    $string="File not found with filepath: $filePath!";
+                    return $string;
+            }
+        }
+    }
+    
+    public static function getExtendedMessage($code,$filePath="")
     {
         if(in_array($code, self::$fileErrorCodes))
         {
@@ -24,7 +37,6 @@ class File
                     $string.="<p style='color:#6d5c5c;font-family:monospace;font-size:12px;margin-bottom:1px;margin-top:1px;font-weight:bolder'>File: $filePath</p>";
                     $string.="<p style='color:#6d5c5c;font-family:monospace;font-size:12px;margin-bottom:1px;margin-top:1px;font-weight:bolder'>You must provide a valid template file.</p>";
                     return $string;
-
             }
         }
     }
