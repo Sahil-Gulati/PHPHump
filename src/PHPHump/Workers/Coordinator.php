@@ -54,7 +54,7 @@ class Coordinator extends Ops
             case \PHPHump\Constants\File::TEMPLATE_FILE_TYPE:
                 if($exists==false)
                 {
-                    throw new \PHPHump\Exception\File(404,$filePath);
+                    throw new \PHPHump\Exception\Exception(\PHPHump\Constants\Exception::FILE,404,$filePath);
                 }
                 self::$existsTemplateFile=true;
                 break;
@@ -108,7 +108,7 @@ class Coordinator extends Ops
                 {
                     if(Ops::isValidJson($this->configJson)==false)
                     {
-                        throw new \PHPHump\Exception\File(500,\PHPHump\Constants\File::CONFIG_FILE_TYPE);
+                        throw new \PHPHump\Exception\Exception(\PHPHump\Constants\Exception::FILE,500,\PHPHump\Constants\File::CONFIG_FILE_TYPE);
                     }
                 }
                 $this->__execute(\PHPHump\Constants\File::CONFIG_FILE_TYPE);
