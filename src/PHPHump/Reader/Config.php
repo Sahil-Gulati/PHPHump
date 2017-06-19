@@ -18,6 +18,8 @@ class Config
     public static $errorStatus=true;
     public static $erroredVariabledReplacement=array('{','}');
     public static $deadLockPeriod=2;
+    public static $attributePrefix="hump";
+    
     public function __construct($configJson)
     {
         $this->configJson=$configJson;
@@ -29,6 +31,7 @@ class Config
         $this->setIgnoringTags();
         $this->setErroredVariableReplacement();
         $this->setDeadLockPeriod();
+        $this->setAttributePrefix();
     }
     
     private function setIgnoringTags($startsWith=true,$endsWith=false)
@@ -117,6 +120,20 @@ class Config
                 if(is_numeric($jsonObject->deadlock_period))
                 {
                     self::$deadLockPeriod=$jsonObject->deadlock_period;
+                }
+            }
+        }
+    }
+    private function setAttributePrefix()
+    {
+        if(!empty($this->configJson))
+        {
+            $jsonObject=json_decode($this->configJson);
+            if(property_exists($jsonObject, "attribute_prefix"))
+            {
+                if(is_string($jsonObject->attribute_prefix))
+                {
+                    self::$attributePrefix=$jsonObject->attribute_prefix;
                 }
             }
         }
