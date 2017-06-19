@@ -43,7 +43,8 @@ namespace PHPHump\Html\Validator;
                         continue;
                     }
                     $lineNo=parent::getLineNo($this->htmlString, $tagIndex);
-                    throw new \PHPHump\Exception\Validator(
+                    throw new \PHPHump\Exception\Exception(
+                        \PHPHump\Constants\Exception::VALIDATOR,
                         500,
                         parent::getTemplateValidatorException(
                             1,
@@ -84,7 +85,8 @@ namespace PHPHump\Html\Validator;
                 }
                 else
                 {
-                    throw new \PHPHump\Exception\Validator(
+                    throw new \PHPHump\Exception\Exception(
+                        \PHPHump\Constants\Exception::VALIDATOR,
                         500,
                         parent::getTemplateValidatorException(
                             2,
@@ -99,7 +101,8 @@ namespace PHPHump\Html\Validator;
         }
         if(is_array($tempTagsArray) && count($tempTagsArray)>0)
         {
-            throw new \PHPHump\Exception\Validator(
+            throw new \PHPHump\Exception\Exception(
+                        \PHPHump\Constants\Exception::VALIDATOR,
                         500,
                         parent::getTemplateValidatorException(
                             2,
