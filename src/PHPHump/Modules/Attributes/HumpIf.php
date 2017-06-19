@@ -8,13 +8,14 @@ class HumpIf extends HumpLoop
 {
     public function conditional(array $tagsArray=array())
     {
-        $attribute=parent::getAttribute(parent::getElement($tagsArray),"hump-if");
+        $attributePrefix= \PHPHump\Reader\Config::$attributePrefix;
+        $attribute=parent::getAttribute(parent::getElement($tagsArray),"$attributePrefix-if");
         $attributeData=$this->parseIfAttribute($attribute);
         if($this->executeIfBlock($attributeData))
         {
             $tag=  parent::modify(parent::getElement($tagsArray));
             $tagsArray=array_merge(array($tag),parent::unsetFirstElement($tagsArray));
-            $trimmedTag= parent::trimAttribute(parent::getElement($tagsArray),"hump-if");
+            $trimmedTag= parent::trimAttribute(parent::getElement($tagsArray),"$attributePrefix-if");
             $tagsArray=  array_merge(array($trimmedTag),parent::unsetFirstElement($tagsArray));
             $tagsArray=  array_merge(array("<empty>"),$tagsArray);   
         }
@@ -114,11 +115,11 @@ class HumpIf extends HumpLoop
     
     public function conditionalLoop(array $tagsArray=array())
     {
-        $attribute=parent::getAttribute(parent::getElement($tagsArray),"hump-if");
+        $attribute=parent::getAttribute(parent::getElement($tagsArray),"$attributePrefix-if");
         $attributeData=$this->parseIfAttribute($attribute);
         if($this->executeIfBlock($attributeData))
         {
-            $firstElement= parent::trimAttribute(parent::getElement($tagsArray),"hump-if");
+            $firstElement= parent::trimAttribute(parent::getElement($tagsArray),"$attributePrefix-if");
             $tagsArray= parent::unsetFirstElement($tagsArray);
             $tagsArray=array_merge(array("<empty>",$firstElement),$tagsArray);
             return $tagsArray;
