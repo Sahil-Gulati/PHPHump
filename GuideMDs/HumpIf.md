@@ -1,5 +1,5 @@
 # Hump If #
-There can be no. of condition on which you want to 
+There can be number of things, when you want to execute HTML content on the basis of some condition. It can be either positive or negative condition.
 
 
 ## Syntax ##
