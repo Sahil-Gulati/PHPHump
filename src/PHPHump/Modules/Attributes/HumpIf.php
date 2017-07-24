@@ -61,7 +61,10 @@ class HumpIf extends HumpLoop
         }
         else
         {
-            throw new \Exception("Some message for invalid variable name");
+            throw new \PHPHump\Exception\Exception(
+                \PHPHump\Constants\Exception::ATTRIBUTE,
+                0,
+                $attribute);
         }
         return $result;
     }
