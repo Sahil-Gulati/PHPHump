@@ -7,6 +7,7 @@ namespace PHPHump\Constants;
 class Exception
 {
     const FILE="file";
+    const SYNTAX="syntax";
     const VARIABLE="variable";
     const ATTRIBUTE="attribute";
     const VALIDATOR="validator";
