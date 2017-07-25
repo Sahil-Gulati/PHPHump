@@ -11,14 +11,15 @@ class HumpWhile extends HumpAttribute
         "incr");
     protected function whileLoop($tagsArray)
     {
-        $loopVariable= parent::getAttribute(parent::getElement($tagsArray),"hump-while");
+        $attributePrefix= \PHPHump\Reader\Config::$attributePrefix;
+        $loopVariable= parent::getAttribute(parent::getElement($tagsArray),"$attributePrefix-while");
         $counterType= parent::getAttribute(parent::getElement($tagsArray),"counter-type");
         list($exists,$variableValue)=  parent::retrieveValue($loopVariable);
         if($this->isValidWhileLoopAttributes($variableValue, $counterType))
         {
             if($exists===true)
             {
-                $firstElement=parent::trimAttribute(parent::trimAttribute(parent::getElement($tagsArray),"hump-while"),"counter-type");
+                $firstElement=parent::trimAttribute(parent::trimAttribute(parent::getElement($tagsArray),"$attributePrefix-while"),"counter-type");
                 $tagsArray=  parent::unsetFirstElement($tagsArray);
                 $whileInnerHtml = parent::getInnerHtml($tagsArray);
                 $tagsArray = parent::unsetInnerHtml($tagsArray);
@@ -39,7 +40,7 @@ class HumpWhile extends HumpAttribute
             }
             else
             {
-                if(!\PHPHump\Exception\Variable::isThrowable($loopVariable, false))
+                if(!\PHPHump\Exception\Exception::isThrowable(\PHPHump\Constants\Exception::VARIABLE,$loopVariable, false))
                 {
                     $tagsArray=  parent::unsetFirstElement($tagsArray);
                     $tagsArray= parent::unsetInnerHtml($tagsArray);
