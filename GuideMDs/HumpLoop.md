@@ -1,6 +1,6 @@
 # Hump Loop #
 
-Usually we iterate over data content and HTML content within the forloop by echoing out. Here we are skipping that tradition way of wrapping your content with HTML tags.
+Usually iteratation can be proved to be a messy task while dealing with HTML tags. Here we have a much cleaner and easier way of using foreach loop. All it needs is just basic understand of foreach.
 
 
 ## Loop Syntax ##
