@@ -9,8 +9,9 @@ class HumpLoop extends HumpWhile
     
     public function loopify($tagsArray)
     {
-        $loopAttributes=$this->validateLoopAttribute(parent::getAttribute(parent::getElement($tagsArray), "hump-loop"));
-        $topTag=parent::trimAttribute(parent::getElement(parent::getInnerHtml($tagsArray)),"hump-loop");
+        $attributePrefix= \PHPHump\Reader\Config::$attributePrefix;
+        $loopAttributes=$this->validateLoopAttribute(parent::getAttribute(parent::getElement($tagsArray), "$attributePrefix-loop"));
+        $topTag=parent::trimAttribute(parent::getElement(parent::getInnerHtml($tagsArray)),"$attributePrefix-loop");
         $tagsArray=  parent::unsetFirstElement($tagsArray);
         $innerHtmlArray=parent::getInnerHtml($tagsArray);
         $remainingHtmlArray=  parent::unsetInnerHtml($tagsArray);
@@ -32,7 +33,7 @@ class HumpLoop extends HumpWhile
             }
             else
             {
-                \PHPHump\Exception\Variable::isThrowable($loopAttributes[0],false);
+                \PHPHump\Exception\Exception::isThrowable(\PHPHump\Constants\Exception::VARIABLE,$loopAttributes[0],false);
             }
         }
         elseif(count($loopAttributes)==3)
@@ -51,7 +52,7 @@ class HumpLoop extends HumpWhile
             }
             else
             {
-                \PHPHump\Exception\Variable::isThrowable($loopAttributes[0],false);
+                \PHPHump\Exception\Exception::isThrowable(\PHPHump\Constants\Exception::VARIABLE,$loopAttributes[0],false);
             }
         }
         return $remainingHtmlArray;
@@ -61,7 +62,7 @@ class HumpLoop extends HumpWhile
     {
         if(!is_array($dataArray))
         {
-            \PHPHump\Exception\Variable::isThrowable($dataArray,false);//to furnish
+            \PHPHump\Exception\Exception::isThrowable(\PHPHump\Constants\Exception::ATTRIBUTE,6,false);
         }
     }
     public function validateLoopAttribute($attribute)
