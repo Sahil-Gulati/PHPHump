@@ -52,7 +52,9 @@ class Attribute
         $string.="<p style='color:#6d5c5c;font-family:monospace;font-size:12px;margin-bottom:1px;margin-top:1px;font-weight:bolder'>You can't prevent Hump syntax validation error by config.</p>";
         $string.="<p style='color:#6d5c5c;font-family:monospace;font-size:12px;margin-bottom:1px;margin-top:5px;font-weight:bolder'>A valid <span style=".self::$configVarStype.">Hump-If</span> syntax can have two formats:</p>";
         $string.="<p style='color:#6d5c5c;font-family:monospace;font-size:12px;margin-bottom:1px;margin-top:5px;font-weight:bolder'><u>1</u>. <i>variableName<i></p>";
-        $string.="<p style='color:#6d5c5c;font-family:monospace;font-size:12px;margin-bottom:1px;margin-top:5px;font-weight:bolder'><u>2</u>. <i>variableName->indexA->indexB<i></p>";
+        $string.="<p style='color:#6d5c5c;font-family:monospace;font-size:12px;margin-bottom:1px;margin-top:5px;font-weight:bolder'><u>2</u>. <i>not(variableName)<i></p>";
+        $string.="<p style='color:#6d5c5c;font-family:monospace;font-size:12px;margin-bottom:1px;margin-top:5px;font-weight:bolder'><u>3</u>. <i>variableName->indexA->indexB<i></p>";
+        $string.="<p style='color:#6d5c5c;font-family:monospace;font-size:12px;margin-bottom:1px;margin-top:5px;font-weight:bolder'><u>4</u>. <i>not(variableName->indexA->indexB)<i></p>";
         $string.="<p style='color:#6d5c5c;font-family:monospace;font-size:12px;margin-bottom:1px;margin-top:5px;font-weight:bolder'></p>";
         return $string;
     }
