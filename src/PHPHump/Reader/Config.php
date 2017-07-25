@@ -27,7 +27,7 @@ class Config
             "ends_with"=>array());
     public static $globalRequire=array();
     public static $errorStatus=true;
-    public static $erroredVariabledReplacement=array('{','}');
+    public static $erroredVariableReplacement=array('{','}');
     public static $deadLockPeriod=2;
     public static $attributePrefix="hump";
     
@@ -112,11 +112,11 @@ class Config
             {
                 if(property_exists($jsonObject->error_variable, "prefix") && !preg_match('/\s*\#\s*\[$/',$jsonObject->error_variable->prefix))
                 {
-                    self::$erroredVariabledReplacement[0]=$jsonObject->error_variable->prefix;
+                    self::$erroredVariableReplacement[0]=$jsonObject->error_variable->prefix;
                 }
                 if(property_exists($jsonObject->error_variable, "postfix") && !preg_match('/^\s*\]\s*\#/',$jsonObject->error_variable->postfix))
                 {
-                    self::$erroredVariabledReplacement[1]=$jsonObject->error_variable->postfix;
+                    self::$erroredVariableReplacement[1]=$jsonObject->error_variable->postfix;
                 }
             }
         }
