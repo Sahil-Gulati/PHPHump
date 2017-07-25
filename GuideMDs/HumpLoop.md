@@ -16,7 +16,7 @@ Usually we iterate over data content and HTML content within the forloop by echo
 
 
 ## Example: ##
-Create a PHP file with name `hump_loop.php`
+**1.** Create a PHP file with name `hump_loop.php`
 
 ```php
 
@@ -42,7 +42,7 @@ catch (Exception $ex)
 ```
 
 
-Create an HTML file with name `hump_loop.hump.php`
+**2.** Create an HTML file with name `hump_loop.hump.php`
 ```HTML
 <html>
     <head>
@@ -56,7 +56,7 @@ Create an HTML file with name `hump_loop.hump.php`
 </html>
 ```
 
-Output
+**Output:**
 
 ```HTML
 <html>
@@ -82,3 +82,9 @@ Output
     </body>
 </html>
 ```
+> You can also see:
+
+[**Hump If**](https://github.com/Sahil-Gulati/PHPHump/blob/master/GuideMDs/HumpIf.md)<br/>
+[**Hump Attribute**](https://github.com/Sahil-Gulati/PHPHump/blob/master/GuideMDs/HumpAttribute.md)<br/>
+[**Hump While**](https://github.com/Sahil-Gulati/PHPHump/blob/master/GuideMDs/HumpWhile.md)
+ 
