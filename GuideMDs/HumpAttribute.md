@@ -1,5 +1,5 @@
 # Hump Attribute #
-Attributes which plays a very important role in `HTML` these can also be sent via PHP an array of key and value pairs, where keys will be the attribute name and values will be attribute values
+Attributes which plays a very important role in `HTML` tags. These attributes can also be sent via PHP, as an array of key and value pairs, where keys will be the attribute name and values will be attribute values.
 
 
 ## Syntax ##
@@ -16,7 +16,7 @@ Attributes which plays a very important role in `HTML` these can also be sent vi
 
 
 ## Example: ##
-Create a PHP file with name `hump_attribute.php`
+**1.** Create a PHP file with name `hump_attribute.php`
 
 ```php
 <?php
@@ -39,7 +39,7 @@ catch (Exception $ex)
 ```
 
 
-Create an HTML file with name `hump_attribute.hump.php`
+**2.** Create an HTML file with name `hump_attribute.hump.php`
 ```HTML
 <html>
     <head>
@@ -53,7 +53,7 @@ Create an HTML file with name `hump_attribute.hump.php`
 </html>
 ```
 
-Output:
+**Output:**
 
 ```HTML
 <html>
@@ -67,3 +67,8 @@ Output:
   </body>
 </html>
 ```
+> You can also see:
+
+[**Hump If**](https://github.com/Sahil-Gulati/PHPHump/blob/master/GuideMDs/HumpIf.md)<br/>
+[**Hump Loop**](https://github.com/Sahil-Gulati/PHPHump/blob/master/GuideMDs/HumpLoop.md)<br/>
+[**Hump While**](https://github.com/Sahil-Gulati/PHPHump/blob/master/GuideMDs/HumpWhile.md)
