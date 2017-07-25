@@ -15,7 +15,7 @@ class HumpAssign extends HumpRequire
         {
             throw new \PHPHump\Exception\Exception(\PHPHump\Constants\Exception::ATTRIBUTE,4,"");
         }
-        $value=  parent::getAttribute($firstElement, "value");
+        $value=  parent::modify(parent::getAttribute($firstElement, "value"));
         self::setValue($key, $value);
         $tagsArray=  parent::unsetInnerHtml($tagsArray);
         return $tagsArray;
