@@ -1,6 +1,6 @@
 # Hump Loop #
 
-Usually we iterate over data content and HTML content within the forloop by echoing out. Here we are skipping that tradition way of wrapping your content with HTML tags.
+Usually iteratation can be proved to be a messy task while dealing with HTML tags. Here we have a much cleaner and easier way of using foreach loop. All it needs is just basic understand of foreach.
 
 
 ## Loop Syntax ##
@@ -16,7 +16,7 @@ Usually we iterate over data content and HTML content within the forloop by echo
 
 
 ## Example: ##
-Create a PHP file with name `hump_loop.php`
+**1.** Create a PHP file with name `hump_loop.php`
 
 ```php
 
@@ -42,7 +42,7 @@ catch (Exception $ex)
 ```
 
 
-Create an HTML file with name `hump_loop.hump.php`
+**2.** Create an HTML file with name `hump_loop.hump.php`
 ```HTML
 <html>
     <head>
@@ -56,7 +56,7 @@ Create an HTML file with name `hump_loop.hump.php`
 </html>
 ```
 
-Output
+**Output:**
 
 ```HTML
 <html>
@@ -82,3 +82,9 @@ Output
     </body>
 </html>
 ```
+> You can also see:
+
+[**Hump If**](https://github.com/Sahil-Gulati/PHPHump/blob/master/GuideMDs/HumpIf.md)<br/>
+[**Hump Attribute**](https://github.com/Sahil-Gulati/PHPHump/blob/master/GuideMDs/HumpAttribute.md)<br/>
+[**Hump While**](https://github.com/Sahil-Gulati/PHPHump/blob/master/GuideMDs/HumpWhile.md)
+ 

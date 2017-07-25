@@ -1,5 +1,5 @@
 # Hump If #
-There can be no. of condition on which you want to 
+There can be number of things, when you want to execute HTML content on the basis of some condition. It can be either positive or negative condition.
 
 
 ## Syntax ##
@@ -19,7 +19,7 @@ There can be no. of condition on which you want to
 ```
 
 ## Example: ##
-Create a PHP file with name `hump_loop.php`
+**1.** Create a PHP file with name `hump_loop.php`
 
 ```php
 
@@ -51,7 +51,7 @@ catch (Exception $ex)
 ```
 
 
-Create an HTML file with name `hump_if.hump.php`
+**2.** Create an HTML file with name `hump_if.hump.php`
 ```HTML
 <html>
     <head>
@@ -74,7 +74,7 @@ Create an HTML file with name `hump_if.hump.php`
 </html>
 ```
 
-Output
+**Output:**
 
 ```HTML
 <html>
@@ -95,3 +95,8 @@ Output
     </body>
 </html>
 ```
+> You can also see:
+
+[**Hump Loop**](https://github.com/Sahil-Gulati/PHPHump/blob/master/GuideMDs/HumpLoop.md)<br/>
+[**Hump Attribute**](https://github.com/Sahil-Gulati/PHPHump/blob/master/GuideMDs/HumpAttribute.md)<br/>
+[**Hump While**](https://github.com/Sahil-Gulati/PHPHump/blob/master/GuideMDs/HumpWhile.md)
