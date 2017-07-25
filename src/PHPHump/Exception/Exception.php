@@ -83,6 +83,8 @@ class Exception extends \Exception
             {
                 case \PHPHump\Constants\Exception::VARIABLE:
                     throw new \PHPHump\Exception\Exception(\PHPHump\Constants\Exception::VARIABLE,$arguments[1],$arguments[2]);
+                case \PHPHump\Constants\Exception::ATTRIBUTE:
+                    throw new \PHPHump\Exception\Exception(\PHPHump\Constants\Exception::ATTRIBUTE,$arguments[1],$arguments[2]);
             }
         }
     }
