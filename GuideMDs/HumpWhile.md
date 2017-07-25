@@ -1,5 +1,5 @@
 # Hump While #
-This attribute allows us to iterate some html content no. of times.
+Sometimes its just required to iterate over HTML tags any no. of times, which we made quite easy with this attribute, where you will pass parameters and rest `HUMP` will take care of it.
 
 
 ## Syntax ##
@@ -15,7 +15,7 @@ hump-while="variableName" counter-type="incr"
 
 
 ## Example: ##
-Create a PHP file with name `hump_while.php`
+**1.** Create a PHP file with name `hump_while.php`
 
 ```php
 <?php
@@ -40,7 +40,7 @@ catch (Exception $ex)
 ```
 
 
-Create an HTML file with name `hump_while.hump.php`
+**2.** Create an HTML file with name `hump_while.hump.php`
 ```HTML
 <html>
     <head>
@@ -54,7 +54,7 @@ Create an HTML file with name `hump_while.hump.php`
 </html>
 ```
 
-Output
+**Output:**
 
 ```HTML
 <html>
@@ -80,3 +80,8 @@ Output
     </body>
 </html>
 ```
+> You can also see:
+
+[**Hump If**](https://github.com/Sahil-Gulati/PHPHump/blob/master/GuideMDs/HumpIf.md)<br/>
+[**Hump Loop**](https://github.com/Sahil-Gulati/PHPHump/blob/master/GuideMDs/HumpLoop.md)<br/>
+[**Hump Attribute**](https://github.com/Sahil-Gulati/PHPHump/blob/master/GuideMDs/HumpAttribute.md)<br/>
