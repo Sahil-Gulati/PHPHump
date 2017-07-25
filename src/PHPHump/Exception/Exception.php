@@ -73,4 +73,17 @@ class Exception extends \Exception
     {
         return $this->extendedMessage;
     }
+    
+    public static function isThrowable()
+    {
+        if(\PHPHump\Reader\Config::$errorStatus==true)
+        {
+            $arguments=func_get_args();
+            switch ($arguments[0])
+            {
+                case \PHPHump\Constants\Exception::VARIABLE:
+                    throw new \PHPHump\Exception\Exception(\PHPHump\Constants\Exception::VARIABLE,$arguments[1],$arguments[2]);
+            }
+        }
+    }
 }
