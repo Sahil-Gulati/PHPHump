@@ -101,7 +101,7 @@ class Handler
         }
         else
         {
-           list($prefix,$postfix)=\PHPHump\Reader\Config::$erroredVariabledReplacement;
+           list($prefix,$postfix)=\PHPHump\Reader\Config::$erroredVariableReplacement;
            $tag=str_replace($variables[0], $prefix.$variables[1].$postfix, $tag);
         }
         return $tag;
