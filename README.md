@@ -59,15 +59,15 @@ This framework is designed and authored, with an aim to separate `PHP` and `HTML
 
 **1. Attributes**
     
-   1. [***Hump-If***](https://github.com/Sahil-Gulati/PHPHump/blob/master/GuideMDs/HumpIf.md)
-   2. [***Hump-Loop***](https://github.com/Sahil-Gulati/PHPHump/blob/master/GuideMDs/HumpLoop.md)
-   3. [***Hump-Attribute***](https://github.com/Sahil-Gulati/PHPHump/blob/master/GuideMDs/HumpAttribute.md)
-   4. [***Hump-While***](https://github.com/Sahil-Gulati/PHPHump/blob/master/GuideMDs/HumpWhile.md)
+   1. [Hump-If](https://github.com/Sahil-Gulati/PHPHump/blob/master/GuideMDs/HumpIf.md)
+   2. [Hump-Loop](https://github.com/Sahil-Gulati/PHPHump/blob/master/GuideMDs/HumpLoop.md)
+   3. [Hump-Attribute](https://github.com/Sahil-Gulati/PHPHump/blob/master/GuideMDs/HumpAttribute.md)
+   4. [Hump-While](https://github.com/Sahil-Gulati/PHPHump/blob/master/GuideMDs/HumpWhile.md)
 
 **2. Tags**
 
-   1. [***HumpAssign***](https://github.com/Sahil-Gulati/PHPHump/blob/master/GuideMDs/HumpAssign.md)
-   2. [***HumpTemplate***](https://github.com/Sahil-Gulati/PHPHump/blob/master/GuideMDs/HumpTemplate.md)
-   3. [***HumpRequire***](https://github.com/Sahil-Gulati/PHPHump/blob/master/GuideMDs/HumpRequire.md)
-   4. [***HumpSwitch***](https://github.com/Sahil-Gulati/PHPHump/blob/master/GuideMDs/HumpSwitch.md)
+   1. [HumpAssign](https://github.com/Sahil-Gulati/PHPHump/blob/master/GuideMDs/HumpAssign.md)
+   2. [HumpTemplate](https://github.com/Sahil-Gulati/PHPHump/blob/master/GuideMDs/HumpTemplate.md)
+   3. [HumpRequire](https://github.com/Sahil-Gulati/PHPHump/blob/master/GuideMDs/HumpRequire.md)
+   4. [HumpSwitch](https://github.com/Sahil-Gulati/PHPHump/blob/master/GuideMDs/HumpSwitch.md)
 
