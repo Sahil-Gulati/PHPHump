@@ -13,15 +13,15 @@ Templating which is our main goal, but sometimes we want to include template fro
 ```
 
 ### Required parameters  ###
-> file is required as string
+> **Attribute:** *file* is required as string
 
-> name is required as string
+> **Attribute:** *name* is required as string
 
-> analyze is optional can be Y or N
+> **Attribute:** *analyze* is optional can be Y or N
 
 
 ## Example: ##
-Create a PHP file with name `hump_assign.php`
+**1.** Create a PHP file with name `hump_assign.php`
 
 ```php
 <?php
@@ -41,7 +41,7 @@ catch (Exception $ex)
 ?>
 ```
 
-Create a new PHP file with filename `Templates.php` this will hold your all the templates
+**2.** Create a new PHP file with filename `Templates.php` this will hold your all the templates
 
 ```HTML
 <div hump-template-name="my-template1">
@@ -69,7 +69,7 @@ Create a new PHP file with filename `Templates.php` this will hold your all the 
 </div>
 ```
 
-Create an HTML file with name `hump_template.hump.php`
+**3.** Create an HTML file with name `hump_template.hump.php`
 ```HTML
 <html>
     <head>
@@ -90,7 +90,7 @@ Create an HTML file with name `hump_template.hump.php`
 </html>
 ```
 
-Output
+**Output:**
 
 ```HTML
 <html>
