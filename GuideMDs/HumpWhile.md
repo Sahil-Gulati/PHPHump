@@ -13,9 +13,9 @@ Sometimes its just required to iterate over HTML tags any no. of times, which we
 ```
 
 ### Required parameters  ###
-> hump-while is required as string(name of variable)
+> **Attribute:** *hump-while* is required as string
 
-> counter-type is required as string(i.e. either decr or incr)
+> **Attribute:** *counter-type* is required as string(decr/incr)
 
 
 ## Example: ##
