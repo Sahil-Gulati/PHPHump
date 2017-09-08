@@ -11,13 +11,13 @@ Sometimes we dynamically want to assign values rather than on PHP.
 ```
 
 ### Required parameters  ###
-> key is required as string
+> **Attribute:** *key* is required as string
 
-> value is required as string
+> **Attribute:** *value* is required as string
 
 
 ## Example: ##
-Create a PHP file with name `hump_assign.php`
+**1.** Create a PHP file with name `hump_assign.php`
 
 ```php
 <?php
@@ -39,7 +39,7 @@ catch (Exception $ex)
 ```
 
 
-Create an HTML file with name `hump_assign.hump.php`
+**2.** Create an HTML file with name `hump_assign.hump.php`
 ```HTML
 <html>
     <head>
@@ -55,7 +55,7 @@ Create an HTML file with name `hump_assign.hump.php`
 </html>
 ```
 
-Output
+**Output:**
 
 ```HTML
 <html>
