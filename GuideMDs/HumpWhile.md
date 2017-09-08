@@ -4,8 +4,12 @@ Sometimes its just required to iterate over HTML tags any no. of times, which we
 
 ## Syntax ##
 ```HTML
-hump-while="variableName" counter-type="decr"
-hump-while="variableName" counter-type="incr"
+<div hump-while="variableName" counter-type="decr"> <!--- this div will also be repeated-->
+        <!--- content goes here -->
+</div> 
+<div hump-while="variableName" counter-type="incr"> <!--- this div will also be repeated-->
+        <!--- content goes here -->
+</div>
 ```
 
 ### Required parameters  ###
