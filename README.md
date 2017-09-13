@@ -71,3 +71,6 @@ This framework is designed and authored, with an aim to separate `PHP` and `HTML
    3. [HumpRequire](https://github.com/Sahil-Gulati/PHPHump/blob/master/GuideMDs/HumpRequire.md)
    4. [HumpSwitch](https://github.com/Sahil-Gulati/PHPHump/blob/master/GuideMDs/HumpSwitch.md)
 
+## Contributors
+   
+   1.  [@SahilGulati](https://github.com/Sahil-Gulati)
