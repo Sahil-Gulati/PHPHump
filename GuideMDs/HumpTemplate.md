@@ -17,7 +17,8 @@ Templating which is our main goal, but sometimes we want to include template fro
 
 > **Attribute:** *name* is required as string
 
-> **Attribute:** *analyze* is optional can be Y or N
+### Optional parameters  ###
+> **Attribute:** *analyze* can either be Y or N
 
 
 ## Example: ##
