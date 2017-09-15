@@ -47,10 +47,9 @@ class HumpTemplate extends HumpAssign
                     $name=parent::getAttribute($tag, "hump-template-name");
                     if($name==$templateName)
                     {
-                        $firstTag=  parent::getElement($moduleTagsArray);
                         $moduleTagsArray=  parent::unsetFirstElement($moduleTagsArray);
-                        $firstTag=  parent::trimAttribute($firstTag, "hump-template-name");
-                        return array_merge(array($firstTag),$moduleTagsArray);
+                        $moduleTagsArray = parent::unsetLastElement($moduleTagsArray);
+                        return $moduleTagsArray;
                     }
                     break;
                 }
