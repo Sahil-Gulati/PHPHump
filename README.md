@@ -74,3 +74,7 @@ This framework is designed and authored, with an aim to separate `PHP` and `HTML
 ## Contributors
    
    1.  [@SahilGulati](https://github.com/Sahil-Gulati)
+   
+## Feedback
+
+   Your feedback at my implementation will be highly appreciated. For any further requirements, support and issues while implementation, You can directly drop me an email at sahil.gulati1991@outlook.com and I will be back to you. :)
