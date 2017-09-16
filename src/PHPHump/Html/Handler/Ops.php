@@ -327,7 +327,12 @@ class Ops
         while(count($tagsArray)>0)
         {
             self::isDeadLocking($previousTime, time(), "extracting modules");
-            if(self::isOpeningTag(self::getElement($tagsArray)))
+            if(self::isIgnoringTag(\PHPHump\Reader\Config::$ignoringTags["starts_with"], self::getElement($tagsArray)))
+            {
+                $modulesArray[$moduleCounter].=self::getElement($tagsArray);
+                $tagsArray=self::unsetFirstElement($tagsArray);
+            }
+            elseif(self::isOpeningTag(self::getElement($tagsArray)))
             {
                 $tempTagsArray[]= self::getTagName(self::getElement($tagsArray));
                 $modulesArray[$moduleCounter]=  isset($modulesArray[$moduleCounter]) ? $modulesArray[$moduleCounter] : "";
