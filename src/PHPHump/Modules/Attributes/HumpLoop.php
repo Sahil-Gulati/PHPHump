@@ -22,9 +22,9 @@ class HumpLoop extends HumpWhile
             if($exists===true)
             {
                 $this->checkForArray($dataArray);
-                foreach ($dataArray as $key => $$loopAttributes[1])
+                foreach ($dataArray as $key => ${$loopAttributes[1]})
                 {
-                    self::setValue($loopAttributes[1], $$loopAttributes[1]);
+                    self::setValue($loopAttributes[1], ${$loopAttributes[1]});
                     self::setValue($loopAttributes[1]."_key", $key);
                     $this->htmlHumpString.=parent::modify($topTag);
                     $this->__prepare($innerHtmlArray);
@@ -41,10 +41,10 @@ class HumpLoop extends HumpWhile
             if($exists===true)
             {
                 $this->checkForArray($dataArray);
-                foreach ($dataArray as $$loopAttributes[1] => $$loopAttributes[2])
+                foreach ($dataArray as ${$loopAttributes[1]} => ${$loopAttributes[2]})
                 {
-                    self::setValue($loopAttributes[1], $$loopAttributes[1]);
-                    self::setValue($loopAttributes[2], $$loopAttributes[2]);
+                    self::setValue($loopAttributes[1], ${$loopAttributes[1]});
+                    self::setValue($loopAttributes[2], ${$loopAttributes[2]});
                     $this->htmlHumpString.=parent::modify($topTag);
                     $this->__prepare($innerHtmlArray);
                     $this->htmlHumpString.=$endingTag;
