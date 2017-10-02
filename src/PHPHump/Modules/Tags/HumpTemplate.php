@@ -8,9 +8,9 @@ class HumpTemplate extends HumpAssign
 {
     public function templatize($tagsArray)
     {
-        $filePath=parent::getAttribute(parent::getElement($tagsArray),"file");
-        $templateName=parent::getAttribute(parent::getElement($tagsArray),"name");
-        $toAnalyze=parent::getAttribute(parent::getElement($tagsArray),"analyze");
+        $filePath=  parent::modify(parent::getAttribute(parent::getElement($tagsArray),"file"));
+        $templateName=parent::modify(parent::getAttribute(parent::getElement($tagsArray),"name"));
+        $toAnalyze=parent::modify(parent::getAttribute(parent::getElement($tagsArray),"analyze"));
         if(!empty($templateName))
         {
             $tagsArray=  parent::unsetFirstElement($tagsArray);
@@ -28,7 +28,7 @@ class HumpTemplate extends HumpAssign
         }
         else
         {
-            throw new \Exception("Empty name in humpTemplate");
+            throw new \PHPHump\Exception\Exception(\PHPHump\Constants\Exception::ATTRIBUTE,7,"");
         }
     }
     public function getTemplate($filePath,$templateName)
@@ -54,6 +54,11 @@ class HumpTemplate extends HumpAssign
                     break;
                 }
             }
+            throw new \PHPHump\Exception\Exception(\PHPHump\Constants\Exception::ATTRIBUTE,7,$templateName);
+        }
+        else
+        {
+            throw new \PHPHump\Exception\Exception(\PHPHump\Constants\Exception::FILE,404,$filePath);
         }
     }
 }
