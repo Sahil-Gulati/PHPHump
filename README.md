@@ -11,7 +11,7 @@ This framework is designed and authored, with an aim to separate `PHP` and `HTML
 ```javascript
 {
     "require":{
-        "sahil-gulati/phphump": "1.0.1"
+        "sahil-gulati/phphump": "1.0.2"
     }
 }
 ```
