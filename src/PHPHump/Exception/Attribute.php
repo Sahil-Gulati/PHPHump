@@ -16,6 +16,7 @@ class Attribute
         4 => 'getAssignError',
         5 => 'getRequireError',
         6 => 'getLoopVariableError',
+        7 => 'getTemplateNameError',
     );
 
 
@@ -35,6 +36,8 @@ class Attribute
                 return "Invalid assign attribute key can't be empty!";
             case 5:
                 return "File attribute can't be empty!";
+            case 7:
+                return "Invalid template name `$variableName`!";
         }
     }
     public static function getExtendedMessage()
@@ -120,6 +123,16 @@ class Attribute
         $string.="<p style='color:#6d5c5c;font-family:monospace;font-size:16px;margin-bottom:1px;font-weight:bolder'>Invalid file attribute!</p>";
         $string.="<p style='color:#6d5c5c;font-family:monospace;font-size:12px;margin-bottom:8px;margin-top:1px;font-weight:bolder'>File attribute can't be empty.</p>";
         $string.="<p style='color:#6d5c5c;font-family:monospace;font-size:12px;margin-bottom:1px;margin-top:5px;font-weight:bolder'>A valid HumpRequire tag's <span style=".self::$configVarStype.">file</span> attribute can't be empty.</p>";
+        $string.="<p style='color:#6d5c5c;font-family:monospace;font-size:12px;margin-bottom:1px;margin-top:1px;font-weight:bolder'>You can't prevent Hump syntax validation error by config.</p>";
+        $string.="<p style='color:#6d5c5c;font-family:monospace;font-size:12px;margin-bottom:1px;margin-top:5px;font-weight:bolder'><span style=".self::$configVarStype.">Note:</span> It can support dynamic values.</p>";
+        return $string;
+    }
+    private static function getTemplateNameError()
+    {
+        $templateName=func_get_args()[1];
+        $string="<h1 style='color:#c44b4b;font-size:20px;margin-bottom:5px;'>PHPHump Exception!</h1>";
+        $string.="<p style='color:#6d5c5c;font-family:monospace;font-size:16px;margin-bottom:1px;font-weight:bolder'>Invalid template name!</p>";
+        $string.="<p style='color:#6d5c5c;font-family:monospace;font-size:12px;margin-bottom:8px;margin-top:1px;font-weight:bolder'>Template name `$templateName` not found.</p>";
         $string.="<p style='color:#6d5c5c;font-family:monospace;font-size:12px;margin-bottom:1px;margin-top:1px;font-weight:bolder'>You can't prevent Hump syntax validation error by config.</p>";
         $string.="<p style='color:#6d5c5c;font-family:monospace;font-size:12px;margin-bottom:1px;margin-top:5px;font-weight:bolder'><span style=".self::$configVarStype.">Note:</span> It can support dynamic values.</p>";
         return $string;
